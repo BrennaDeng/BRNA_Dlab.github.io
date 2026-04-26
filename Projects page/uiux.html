@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX | BRNA_Dlab</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        (function() {
+            const t = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+</head>
+<body>
+    <button id="backToTop" title="Go to top">TOP ⇡</button>
+    <nav class="navbar" id="navbar-placeholder"></nav>
+
+    <main class="container">
+        <section class="gallery-section">
+
+            <div class="section-masthead">
+            <span>Vol. I &nbsp;·&nbsp; ui/ux</span>
+            <span>Est. 2026</span>
+        </div>
+        <h2 class="normalPage-title">UI/UX</h2>
+
+            <div class="uiux-gallery">
+
+                <!-- 有外部链接的作品 -->
+                <div class="uiux-entry">
+                    <div class="uiux-img-wrap">
+                        <img src="../assets/images/uiux/uicover1.jpg" alt="Project 01" class="uiux-img">
+                        <a class="uiux-img-link" href="https://abstract-art-random.netlify.app/" target="_blank">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> View
+                        </a>
+                    </div>
+                    <div class="uiux-info">
+                        <div class="work-index">No. 001</div>
+                        <div class="work-title">Abstract art Random</div>
+                        <div class="work-tags">
+                            <span class="work-tag">VS Code</span>
+                            <span class="work-tag">Website</span>
+                            <span class="work-tag">2025</span>
+                        </div>
+                        <p class="work-desc">
+                            Inspired by Wassily Kandinsky's Composition 8, this project is an interactive visual experiment that explores the intersection of randomness and artistic logic. By transforming the screen into an open canvas, I utilized stochastic algorithms to allow users to "compose" unique abstract paintings through simple clicks. Each interaction generates a random geometric shape coupled with a specific musical scale mapped to its coordinates, creating a synesthetic experience where sight meets sound.<br><br>
+                            The design prioritizes "intuitive efficiency," balancing the unpredictability of visual disorder with the harmony of an ordered auditory hierarchy, ultimately forming a creative closed loop that empowers users to participate in the act of digital creation.
+                        </p>
+                        <a class="uiux-ext-link" href="https://abstract-art-random.netlify.app/" target="_blank">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            View Website
+                        </a>
+                        <a class="uiux-ext-link" href="https://github.com/BrennaDeng/Abstract-art-random" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                            UI Code Repository 
+                        </a>
+                        <a class="uiux-ext-link" href="https://prototype-random-abstract.netlify.app/" target="_blank">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            UI Prototype
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 没有外部链接的作品 -->
+                <div class="uiux-entry">
+                    <div class="uiux-img-wrap">
+                        <img src="../assets/images/UIUX/uicover3.jpg" alt="Project 02" class="uiux-img">
+                        <a class="uiux-img-link" href="https://www.figma.com/proto/kDC6BR7ducIDKlBFAus5gp/quiz-anime?node-id=85-278&p=f&t=0ndxZVOBOd2lJ04R-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=85%3A278" target="_blank">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> View
+                        </a>
+                    </div>
+                    <div class="uiux-info">
+                        <div class="work-index">No. 002</div>
+                        <div class="work-title">Quiz APP</div>
+                        <div class="work-tags">
+                            <span class="work-tag">Mobile</span>
+                            <span class="work-tag">Figma</span>
+                            <span class="work-tag">2023</span>
+                        </div>
+                        <p class="work-desc">
+                            This is a prototype of a quiz software application that covers the entire process from login to taking the quiz and viewing the results.<br><br>
+                            It includes features such as a personal dashboard, answer selection, and a leaderboard.
+                        </p>
+                        <a class="uiux-ext-link" href="https://www.figma.com/proto/kDC6BR7ducIDKlBFAus5gp/quiz-anime?node-id=85-278&p=f&t=0ndxZVOBOd2lJ04R-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=85%3A278" target="_blank">
+                            <i class="fa-brands fa-figma"></i>
+                            Open in Figma
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <br><br>
+            <div class="page-nav"
+                 data-prev="3d.html"  data-prev-label="3D"
+                 data-next="game.html"    data-next-label="Game">
+                <a class="nav-prev" href="#"><span class="nav-label"></span></a>
+                <span class="page-nav-center">· · ·</span>
+            </div>
+
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="../script.js"></script>
+</body>
+</html>

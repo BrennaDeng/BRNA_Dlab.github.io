@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRNA_Dlab | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        (function() {
+            const t = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+</head>
+<body>
+    <button id="backToTop" title="Go to top">TOP ⇡</button>
+    <nav class="navbar" id="navbar-placeholder"></nav>
+
+    <main>
+
+        <!-- 报纸栏头 -->
+        <div class="section-masthead home-masthead">
+            <span>Vol. I &nbsp;·&nbsp; Home</span>
+            <span>Est. 2026</span>
+        </div>
+
+        <!-- Hero：视频背景 -->
+        <section class="hero">
+            <div class="hero-video-bg">
+                <video autoplay muted loop playsinline>
+                    <source src="assets/videos/re2.mp4" type="video/mp4">
+                </video>
+                <div class="hero-video-overlay"></div>
+            </div>
+
+            <div class="hero-content">
+                <h1>BRNA.DLab</h1>
+                <p class="hero-desc">
+                    <span style="font-size: 16px;">BRNA.Dlab is a digital lab. Here I record inspiration, showcase my work, and explore the boundaries of art.</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- 分割线 -->
+        <div class="home-section-rule">
+            <div class="rule-line"></div>
+            <span class="rule-label">Featured Works</span>
+            <div class="rule-line"></div>
+        </div>
+
+        <!-- 精选作品网格 -->
+        <section class="home-snap-section">
+            <div class="home-snap-grid">
+
+                <a class="snap-card" href="Projects page/video.html">
+                    <div class="snap-thumb">
+                        <img src="assets/images/videocover/cover1.png" alt="Video">
+                    </div>
+                    <div class="snap-info">
+                        <div class="snap-cat">Video</div>
+                        <div class="snap-name">AfterNOON</div>
+                    </div>
+                    <span class="snap-arrow">→</span>
+                </a>
+
+                <a class="snap-card" href="Projects page/game.html">
+                    <div class="snap-thumb">
+                        <img src="assets/images/gamecover/screen1.jpg" alt="Game">
+                    </div>
+                    <div class="snap-info">
+                        <div class="snap-cat">Game</div>
+                        <div class="snap-name">Dimension Echoes</div>
+                    </div>
+                    <span class="snap-arrow">→</span>
+                </a>
+
+                <a class="snap-card" href="Projects page/3d.html">
+                    <div class="snap-thumb">
+                        <img src="assets/images/3d/3dcover1.png" alt="3D">
+                    </div>
+                    <div class="snap-info">
+                        <div class="snap-cat">3D</div>
+                        <div class="snap-name">Small Room Diorama</div>
+                    </div>
+                    <span class="snap-arrow">→</span>
+                </a>
+
+                <a class="snap-card" href="Projects page/manga.html">
+                    <div class="snap-thumb">
+                        <img src="assets/images/manga/image1.png" alt="3D">
+                    </div>
+                    <div class="snap-info">
+                        <div class="snap-cat">Manga</div>
+                        <div class="snap-name">Open That Box of Longing</div>
+                    </div>
+                    <span class="snap-arrow">→</span>
+                </a>
+
+            </div>
+
+            <div class="home-view-more">
+                <a href="projects.html" class="cta-button">All Projects &nbsp;→</a>
+            </div>
+        </section>
+
+        <!-- 分割线 -->
+        <div class="home-section-rule">
+            <div class="rule-line"></div>
+            <span class="rule-label">About the Lab</span>
+            <div class="rule-line"></div>
+        </div>
+
+        <!-- About + 近期动态 两栏 -->
+        <section class="home-about-strip">
+
+            <div class="home-about-col">
+                <div class="about-col-head">Who I am</div>
+                <p>
+                    Frontend developer &amp; digital artist. I use VS Code to explore
+                    the edges of motion, code, and visual storytelling. This site is
+                    my laboratory — always in progress.
+                </p>
+                <a href="about.html" class="home-text-link">Read more →</a>
+            </div>
+
+            <div class="home-about-divider"></div>
+
+            <div class="home-about-col">
+                <div class="about-col-head">Latest Activity</div>
+                <div class="home-latest-list">
+                    <div class="home-latest-item">
+                        <span class="home-latest-date">2026 &nbsp;·&nbsp; New website</span>
+                        <span class="home-latest-title">Celebrating finally making a personal website.</span>
+                    </div>
+                    <!--<div class="home-latest-item">
+                        <span class="home-latest-date">2024 &nbsp;·&nbsp; Video</span>
+                        <span class="home-latest-title">New motion piece uploaded</span>
+                    </div>
+                    <div class="home-latest-item">
+                        <span class="home-latest-date">2024 &nbsp;·&nbsp; Manga</span>
+                        <span class="home-latest-title">Chapter 02 published</span>
+                    </div>
+                    <div class="home-latest-item">
+                        <span class="home-latest-date">2024 &nbsp;·&nbsp; Web</span>
+                        <span class="home-latest-title">Site launched</span>
+                    </div>-->
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="script.js"></script>
+</body>
+</html>

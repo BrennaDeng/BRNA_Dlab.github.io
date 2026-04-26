@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | BRNA_Dlab</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        (function() {
+            const t = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+</head>
+<body>
+    <nav class="navbar" id="navbar-placeholder"></nav>
+    <button id="backToTop" title="Go to top">TOP ⇡</button>
+
+    <main class="container">
+        <section class="contact-section">
+
+            <div class="section-masthead">
+            <span>Vol. I &nbsp;·&nbsp; contact</span>
+            <span>Est. 2026</span>
+        </div>
+
+            <div class="contact-grid">
+
+                <!-- 左栏：标题 + 联系方式 -->
+                <div class="contact-left">
+                    <div class="contact-big-title">Let's<br>Talk.</div>
+                    <p class="contact-desc">
+                        Whether it's for a project collaboration, a technical exchange, or just to chat—
+                        feel free to email me anytime.
+                    </p>
+
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <span class="ci-label">Email</span>
+                            <a class="ci-val">brennadeng@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="ci-label">Linkedin</span>
+                            <a class="ci-val" href="https://www.linkedin.com/messaging/thread/2-ZWZlZDJhZjQtYjUxNi00MzZiLTgyYTAtY2UxYWY0MjExZTI5XzEwMA==/" target="_blank">Yihan(Brenna) Deng</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="ci-label">Reply</span>
+                            <span class="ci-val ci-val--muted">Usually within 48 hrs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右栏：表单 -->
+                <div class="contact-right">
+                    <div class="contact-form-head">Send a Letter</div>
+
+                    <!-- 表单，formspree.io-->
+                    <form class="contact-form"
+                          action="https://formspree.io/f/mgorqnny"
+                          method="POST">
+
+                        <div class="cf-row-two">
+                            <div class="cf-group">
+                                <label class="cf-label">Name*</label>
+                                <input class="cf-input" type="text" name="name"
+                                       placeholder="Your name" required>
+                            </div>
+                            <div class="cf-group">
+                                <label class="cf-label">Email*</label>
+                                <input class="cf-input" type="email" name="email"
+                                       placeholder="example@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="cf-group">
+                            <label class="cf-label">Subject</label>
+                            <input class="cf-input" type="text" name="subject"
+                                   placeholder="Your purpose for project (optional)">
+                        </div>
+
+                        <div class="cf-group">
+                            <label class="cf-label">Message*</label>
+                            <textarea class="cf-textarea" name="message"
+                                      rows="5" placeholder="Content...or just chatting" required></textarea>
+                        </div>
+
+                        <button type="submit" class="cf-submit">
+                            Send &nbsp;<i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <p class="cf-note">
+                            * This form uses Formspree — your message goes directly to my inbox.
+                        </p>
+
+                    </form>
+                </div>
+
+            </div><!-- /contact-grid -->
+
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D | BRNA_Dlab</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        (function() {
+            const t = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+</head>
+<body>
+    <button id="backToTop" title="Go to top">TOP ⇡</button>
+    <nav class="navbar" id="navbar-placeholder"></nav>
+
+    <main class="container">
+        <section class="gallery-section">
+
+            <div class="section-masthead">
+            <span>Vol. I &nbsp;·&nbsp; 3d</span>
+            <span>Est. 2026</span>
+        </div>
+        <h2 class="normalPage-title">3D MODELS</h2>
+            <div class="model-gallery">
+
+                <div class="model-entry">
+    <div class="model-viewer-wrap">
+        <iframe 
+            title="small room diorama" 
+            frameborder="0" 
+            allowfullscreen 
+            mozallowfullscreen="true" 
+            webkitallowfullscreen="true" 
+            allow="autoplay; fullscreen; xr-spatial-tracking" 
+            src="https://sketchfab.com/models/bbab4a35c2a54a7eaf36cae97f47a1e6/embed"> 
+        </iframe>
+    </div>
+    
+    <div class="model-info">
+        <div>
+            <div class="work-index">No. 001</div>
+            <div class="work-title">Small Room Diorama</div> <div class="work-tags" style="margin-top:6px">
+                <span class="work-tag">Maya</span>
+                <span class="work-tag">Diorama</span>
+                <span class="work-tag">2025</span>
+            </div>
+            <p class="work-desc" style="margin-top:10px">
+                This is a small 3D scene depicting a tiny room. It explores the interplay and balance of light and shadow within an extremely small space.
+            </p>
+        </div>
+        <a class="model-link" href="https://sketchfab.com/3d-models/small-room-diorama-bbab4a35c2a54a7eaf36cae97f47a1e6" target="_blank">
+            View on Sketchfab <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+    </div>
+</div>
+
+                <!-- 只有渲染图的作品 -->
+                <!--<div class="model-entry">
+                    <div class="model-viewer-wrap">
+                        <img src="path/to/render01.jpg" alt="3D render">
+                    </div>
+                    <div class="model-info">
+                        <div>
+                            <div class="work-index">No. 002</div>
+                            <div class="work-title">场景渲染标题</div>
+                            <div class="work-tags" style="margin-top:6px">
+                                <span class="work-tag">Blender</span>
+                                <span class="work-tag">Environment</span>
+                            </div>
+                            <p class="work-desc" style="margin-top:10px">
+                                描述占位。这件作品用静态渲染图展示，点击下方链接查看完整图集。
+                            </p>
+                        </div>
+                        <a class="model-link" href="#" target="_blank">
+                            Full Gallery <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>-->
+
+            </div>
+
+            <br><br>
+            <div class="page-nav"
+                 data-prev="design.html"          data-prev-label="Design"
+                 data-next="uiux.html"     data-next-label="Ui/UX">
+                <a class="nav-prev" href="#"><span class="nav-label"></span></a>
+                <span class="page-nav-center">· · ·</span>
+                <a class="nav-next" href="#"><span class="nav-label"></span></a>
+            </div>
+
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="../script.js"></script>
+</body>
+</html>

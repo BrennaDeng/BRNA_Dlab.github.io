@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manga | BRNA_Dlab</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        (function() {
+            const t = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+</head>
+<body>
+    <button id="backToTop" title="Go to top">TOP ⇡</button>
+    <nav class="navbar" id="navbar-placeholder"></nav>
+
+    <main class="container">
+        <section class="gallery-section">
+
+            <div class="section-masthead">
+            <span>Vol. I &nbsp;·&nbsp; manga</span>
+            <span>Est. 2026</span>
+        </div>
+        <h2 class="normalPage-title">MANGA</h2>
+
+            <!-- 章节 01 — 默认展开 -->
+            <div class="manga-chapter">
+                <div class="manga-chapter-head" onclick="toggleManga(this)">
+                    <span class="manga-chapter-title">Manga 01 &nbsp;—&nbsp; Open That Box of Longing</span>
+                    <i class="fa-solid fa-chevron-down manga-chapter-arrow"></i>
+                </div>
+                <div class="manga-pages open">
+                    <div class="manga-pages-inner">
+                        <p class="work-desc" style="margin-top:12px">
+                            A story of greed...
+                        </p>
+                        <img class="manga-page-img" src="../assets/images/manga/image1.png" alt="p1">
+                        <img class="manga-page-img" src="../assets/images/manga/image2.png" alt="p2">
+                        <img class="manga-page-img" src="../assets/images/manga/image3.png" alt="p3">
+                        <img class="manga-page-img" src="../assets/images/manga/image4.png" alt="p4">
+                        <img class="manga-page-img" src="../assets/images/manga/image5.png" alt="p5">
+                        <img class="manga-page-img" src="../assets/images/manga/image6.png" alt="p6">
+                        <img class="manga-page-img" src="../assets/images/manga/image7.png" alt="p7">
+                        <img class="manga-page-img" src="../assets/images/manga/image8.png" alt="p8">
+                        <img class="manga-page-img" src="../assets/images/manga/image9.png" alt="p9">
+                        <img class="manga-page-img" src="../assets/images/manga/image10.png" alt="p10">
+                        <img class="manga-page-img" src="../assets/images/manga/image11.png" alt="p11">
+                        <img class="manga-page-img" src="../assets/images/manga/image12.png" alt="p12">
+                        <img class="manga-page-img" src="../assets/images/manga/image13.png" alt="p13">
+                        <img class="manga-page-img" src="../assets/images/manga/image14.png" alt="p14">
+                        <img class="manga-page-img" src="../assets/images/manga/image15.png" alt="p15">
+                        <img class="manga-page-img" src="../assets/images/manga/image16.png" alt="p16">
+                        <img class="manga-page-img" src="../assets/images/manga/image17.png" alt="p17">
+                        <img class="manga-page-img" src="../assets/images/manga/image18.png" alt="p18">
+                        <img class="manga-page-img" src="../assets/images/manga/image19.png" alt="p19">
+                        <img class="manga-page-img" src="../assets/images/manga/image20.png" alt="p20">
+                        <!-- 继续加页 -->
+
+                        <div class="manga-bts" style="margin-top: 60px; border-top: 1px solid var(--border-color); padding-top: 40px;">
+    <h3 class="section-subtitle" style="text-align: center; margin-bottom: 30px;">Behind the Scenes</h3>
+    
+    <div class="bts-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start;">
+        
+        <div class="bts-text-col">
+            <h4 style="font-size: 1.1rem; margin-bottom: 15px; color: var(--accent);">Ramblings</h4>
+            <p class="work-desc" style="line-height: 1.8;">
+               Inspired by “Pandora's Box,” this manga tells a story of human greed and desire, revolving around a clumsy angel, an ordinary office worker, and a greedy boss.<br>
+               I really love seeing angels using high-tech smartphones in modern times, and she suggest sending the boss of those overworked employees to a mental hospital ƪ(˘⌣˘)ʃ
+            </p>
+        </div>
+        <div class="bts-media-col">
+            <div style="background: var(--card-bg, #ece9e0); padding: 20px;">
+                <h4 style="font-size: 1rem; margin-bottom: 15px; opacity: 0.8;">Early Sketches</h4>
+                <img src="../assets/images/manga/ske1.png" alt="Draft" style="width: 100%;">
+                <p style="font-size: 0.8rem; color: #888; margin-top: 10px; font-style: italic;">
+                    * Storyboard draft
+                </p>
+            </div>
+        </div>
+        <div class="bts-media-col">
+            <div style="background: var(--card-bg, #ece9e0); padding: 20px;">
+                <h4 style="font-size: 1rem; margin-bottom: 15px; opacity: 0.8;">Early Sketches</h4>
+                <img src="../assets/images/manga/ske2.png" alt="Draft" style="width: 100%; ">
+                <p style="font-size: 0.8rem; color: #888; margin-top: 10px; font-style: italic;">
+                    * Storyboard draft
+                </p>
+            </div>
+        </div>
+        <div class="bts-media-col">
+            <div style="background: var(--card-bg, #ece9e0); padding: 20px;">
+                <h4 style="font-size: 1rem; margin-bottom: 15px; opacity: 0.8;">Early Sketches</h4>
+                <img src="../assets/images/manga/sk.png" alt="Draft" style="width: 100%; ">
+                <p style="font-size: 0.8rem; color: #888; margin-top: 10px; font-style: italic;">
+                    * Exploring Comic Styles (Black & White or Colored)
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="page-nav"
+                 data-prev="game.html"   data-prev-label="Game"
+                 data-next="3d.html"     data-next-label="3D">
+                <a class="nav-prev" href="#"><span class="nav-label"></span></a>
+                <span class="page-nav-center">· · ·</span>
+                <a class="nav-next" href="#"><span class="nav-label"></span></a>
+            </div>
+
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="../script.js"></script>
+</body>
+</html>

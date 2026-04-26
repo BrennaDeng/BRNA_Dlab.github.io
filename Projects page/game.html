@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game | BRNA_Dlab — Dimension Echoes</title>
+    <!-- 外部样式表 (保持原有引用路径) -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- 内联关键性灯箱修复样式 + 确保 zoom 光标可见，同时补全缺失的assets网格排版 -->
+    <style>
+/* ============================================================
+   灯箱样式 - 完整支持明暗主题 & 复古报纸风格
+   ============================================================ */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: zoom-out;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.25s ease;
+}
+
+/* 明亮主题灯箱背景 */
+:root .lightbox {
+    background-color: rgba(244, 241, 234, 0.92);
+    backdrop-filter: blur(6px);
+}
+
+/* 暗色主题灯箱背景 */
+[data-theme="dark"] .lightbox {
+    background-color: rgba(12, 12, 12, 0.94);
+    backdrop-filter: blur(8px);
+}
+
+.lightbox-content {
+    display: block;
+    max-width: 90vw;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.2s;
+}
+
+/* 明亮主题图片边框 */
+:root .lightbox-content {
+    border: 2px solid #2c2c2c;
+    background: #f4f1ea;
+}
+
+/* 暗色主题图片边框 */
+[data-theme="dark"] .lightbox-content {
+    border: 2px solid #d1cdc2;
+    background: #0c0c0c;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 28px;
+    right: 42px;
+    font-size: 52px;
+    font-weight: 300;
+    font-family: monospace;
+    cursor: pointer;
+    z-index: 10000;
+    transition: transform 0.2s, color 0.2s;
+    background: transparent;
+    line-height: 1;
+}
+
+/* 明亮主题关闭按钮 */
+:root .close-lightbox {
+    color: #2c2c2c;
+}
+
+/* 暗色主题关闭按钮 */
+[data-theme="dark"] .close-lightbox {
+    color: #d1cdc2;
+}
+
+.close-lightbox:hover {
+    transform: scale(1.12);
+}
+
+:root .close-lightbox:hover {
+    color: #591512;
+}
+
+[data-theme="dark"] .close-lightbox:hover {
+    color: #aab5dc;
+}
+
+#caption {
+    position: absolute;
+    bottom: 32px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: var(--font-nav, 'Old Typewriter', monospace);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 8px 20px;
+    pointer-events: none;
+    border-radius: 0;
+    backdrop-filter: blur(4px);
+}
+
+/* 明亮主题 caption */
+:root #caption {
+    color: #2c2c2c;
+    background: rgba(244, 241, 234, 0.85);
+    border: 1px solid #2c2c2c;
+}
+
+/* 暗色主题 caption */
+[data-theme="dark"] #caption {
+    color: #d1cdc2;
+    background: rgba(12, 12, 12, 0.85);
+    border: 1px solid #d1cdc2;
+}
+
+/* 灯箱打开时锁定滚动 */
+body.lightbox-open {
+    overflow: hidden;
+}
+
+/* 确保灯箱内的图片鼠标手势正确 */
+.lightbox {
+    cursor: zoom-out;
+}
+
+/* ============================================================
+   原有 assets 网格内图片光标样式 (已保留兼容)
+   ============================================================ */
+.asset-item img {
+    cursor: zoom-in;
+}
+    </style>
+    <script>
+        (function() {
+            const t = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+</head>
+<body>
+    <nav class="navbar" id="navbar-placeholder"></nav>
+    <button id="backToTop" title="Go to top">TOP ⇡</button>
+
+    <main class="container">
+        <section class="gallery-section">
+            <div class="section-masthead">
+                <span>Vol. I &nbsp;·&nbsp; game</span>
+                <span>Est. 2026</span>
+            </div>
+            <h2 class="normalPage-title">GAME</h2>
+
+            <!-- 宣传视频 -->
+            <div class="work-index">No. 001</div>
+            <div class="game-hero">
+                <video controls poster="../assets/images/gamecover/STARTfin.png">
+                    <source src="../assets/videos/Deng_Yihan_s3998478_AT2_promotional video.mp4" type="video/mp4">
+                    您的浏览器不支持 video 标签。
+                </video>
+            </div>
+
+            <!-- 游戏信息表 -->
+            <div class="game-meta">
+                <div class="game-meta-item">
+                    <div class="game-meta-label">Name</div>
+                    <div class="game-meta-val">Dimension Echoes</div>
+                </div>
+                <div class="game-meta-item">
+                    <div class="game-meta-label">Type</div>
+                    <div class="game-meta-val">Platform game</div>
+                </div>
+                <div class="game-meta-item">
+                    <div class="game-meta-label">Tool</div>
+                    <div class="game-meta-val">Unity, Clip Studio Paint</div>
+                </div>
+                <div class="game-meta-item">
+                    <div class="game-meta-label">Release data</div>
+                    <div class="game-meta-val">2024</div>
+                </div>
+            </div>
+
+            <!-- 游戏描述 -->
+            <p class="work-desc">
+                “Dimension Echoes” is a platformer featuring a fragmented narrative, in which players progress through levels to successfully “escape” the tower.<br><br>
+                Created using hand-drawn 2D art, the game draws inspiration from reflections on a silent past and the reconstruction of space. Unfortunately, due to time constraints and my technical limitations at the time, I was unable to fully complete it within the limited timeframe, so I had to cut the final level, resulting in a semi-open ending.<br><br>
+                Some mechanics draw inspiration from Hollow Knight (since I really enjoy playing it), and one scene includes a small image as a tribute to the game.<br><br>
+                A demo version of the game is currently available on itch.io—we welcome all visitors to give it a try!<br><br>
+            </p>
+
+            <!-- 外部链接 -->
+            <div class="game-links">
+                <a class="game-link primary" href="https://brenna-deng.itch.io/dimension-echoes" target="_blank">
+                    <i class="fa-solid fa-gamepad"></i> Play on itch.io
+                </a>
+            </div>
+            <div class="game-assets">
+                <h3 class="section-subtitle">Behind the Scenes</h3>
+                <div class="assets-grid">
+                    <div class="asset-item">
+                        <img src="../assets/images/gamecover/gainian.png" alt=">Early style concept art" data-img-caption="Early style concept art">
+                        <span class="asset-caption">Early style concept art<br>Like a world within a picture frame</span>
+                    </div>
+                    <div class="asset-item">
+                        <img src="../assets/images/gamecover/STARTfin.png" alt=">Main visual image" data-img-caption="Main visual image">
+                        <span class="asset-caption">Main visual image</span>
+                    </div>
+                    <div class="asset-item">
+                        <img src="../assets/images/gamecover/lose fin.png" alt="Failed settlement scene" data-img-caption="Failed settlement scene">
+                        <span class="asset-caption">Failed settlement scene<br>"Perhaps simply lack the energy."</span>
+                    </div>
+                    <div class="asset-item">
+                        <img src="../assets/images/gamecover/Ending1fin.png" alt="Victory settlement scene" data-img-caption="Victory settlement scene">
+                        <span class="asset-caption">Victory settlement scene<br>"Is it really possible to get out?"</span>
+                    </div>
+                    <div class="asset-item">
+                        <img src="../assets/images/gamecover/sculpture.png" alt="Level 01 Environment" data-img-caption="The sculpture trapped in the tower">
+                        <span class="asset-caption">Level 01 Environment</span>
+                    </div>
+                    <div class="asset-item">
+                        <img src="../assets/images/gamecover/charca.png" alt="Character Art | 「Cecilia」" data-img-caption="The sprite of the main character 「Cecilia」">
+                        <span class="asset-caption">Character Art | 「Cecilia」</span>
+                    </div>
+                    <div class="asset-item">
+                        <img src="../assets/images/gamecover/npcIdle1.png" alt="Character Art |「Madeline」" data-img-caption="The only NPC in the game">
+                        <span class="asset-caption">Character Art |「Madeline」</span>
+                    </div>
+                    <div class="asset-item">
+                        <img src="../assets/images/gamecover/dialogue2.png" alt="Dialogue Asset" data-img-caption="Dialogue">
+                        <span class="asset-caption">Dialogue Asset</span>
+                    </div>
+                    <div class="asset-item">
+                        <img src="../assets/images/gamecover/darw2.png" alt="Dialogue Asset" data-img-caption="In the scene">
+                        <span class="asset-caption">Small paintings in the scene</span>
+                    </div>
+                </div>
+            </div>
+            <div class="game-assets">
+                <h3 class="section-subtitle">Screenshot</h3>
+                <div class="assets-grid">
+                    <div class="asset-item">
+                        <img src="../assets/images/gamecover/screen1.jpg" alt=">Early style concept art" data-img-caption="Screenshot">
+                        <span class="asset-caption">Screenshot 01</span>
+                    </div>
+                    <div class="asset-item">
+                        <img src="../assets/images/gamecover/screen2.jpg" alt=">Main visual image" data-img-caption="Screenshot">
+                        <span class="asset-caption">Screenshot 02</span>
+                    </div>
+                    <div class="asset-item">
+                        <img src="../assets/images/gamecover/screen3.jpg" alt="Screenshot" data-img-caption="Screenshot">
+                        <span class="asset-caption">Screenshot 03</span>
+                    </div>
+                    <div class="asset-item">
+                        <img src="../assets/images/gamecover/screen4.jpg" alt="Screenshot" data-img-caption="Screenshot">
+                        <span class="asset-caption">Screenshot 04</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-nav"
+                 data-prev="video.html" data-prev-label="Video"
+                 data-next="manga.html"  data-next-label="Manga">
+                <a class="nav-prev" href="#"><span class="nav-label"></span></a>
+                <span class="page-nav-center">· · ·</span>
+                <a class="nav-next" href="#"><span class="nav-label"></span></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- 灯箱结构 (完全重写以确保稳定) -->
+    <div id="imageLightbox" class="lightbox" style="display: none;">
+        <span class="close-lightbox" id="lightboxCloseBtn">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" alt="放大预览">
+        <div id="caption"></div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- 修复灯箱功能的专用脚本 (不依赖于外部 script.js 中冲突的全局事件) -->
+    <script>
+        (function() {
+            // 保证DOM完全加载后执行
+            function initLightbox() {
+                const lightbox = document.getElementById('imageLightbox');
+                const lightboxImg = document.getElementById('lightboxImg');
+                const closeBtn = document.getElementById('lightboxCloseBtn');
+                const captionDiv = document.getElementById('caption');
+
+                // 安全性检查: 必要元素均存在
+                if (!lightbox || !lightboxImg) {
+                    console.warn('Lightbox DOM 元素缺失');
+                    return;
+                }
+
+                // 获取所有需要点击放大的图片 (asset-item内的img)
+                const zoomableImages = document.querySelectorAll('.asset-item img');
+                
+                if (zoomableImages.length === 0) {
+                    console.log('没有找到 .asset-item img，请检查图片路径');
+                    return;
+                }
+
+                // 打开灯箱的函数
+                function openLightbox(imgElement) {
+                    const imgSrc = imgElement.getAttribute('src');
+                    if (!imgSrc) return;
+                    
+                    lightboxImg.src = imgSrc;
+                    lightboxImg.alt = imgElement.alt || '游戏画面';
+                    
+                    // 获取自定义标题或默认figcaption文本：优先取 data-img-caption，再取同级 .asset-caption 文本
+                    let captionText = imgElement.getAttribute('data-img-caption');
+                    if (!captionText) {
+                        const parentAsset = imgElement.closest('.asset-item');
+                        if (parentAsset) {
+                            const captionSpan = parentAsset.querySelector('.asset-caption');
+                            if (captionSpan) {
+                                captionText = captionSpan.innerText.trim();
+                            }
+                        }
+                    }
+                    if (captionText && captionDiv) {
+                        captionDiv.textContent = captionText;
+                    } else if (captionDiv) {
+                        captionDiv.textContent = imgElement.alt || '游戏幕后影像';
+                    }
+                    
+                    // 显示灯箱并锁定滚动
+                    lightbox.style.display = 'flex';
+                    document.body.classList.add('lightbox-open');
+                    document.body.style.overflow = 'hidden';
+                }
+
+                // 关闭灯箱函数
+                function closeLightbox() {
+                    if (lightbox) {
+                        lightbox.style.display = 'none';
+                        document.body.classList.remove('lightbox-open');
+                        document.body.style.overflow = '';
+                        // 可选: 清空图片源防止残留闪烁
+                        // lightboxImg.src = '';
+                    }
+                }
+
+                // 为每一个图片绑定点击事件 (使用事件委托或直接绑定，确保稳健)
+                zoomableImages.forEach(img => {
+                    // 移除可能之前存在的老旧内联onclick，防止冲突
+                    img.removeEventListener('click', window._lightboxHandler);
+                    const handler = function(event) {
+                        event.stopPropagation();
+                        openLightbox(this);
+                    };
+                    img.addEventListener('click', handler);
+                    // 存储以便调试但不影响
+                    img.style.cursor = 'zoom-in';
+                });
+
+                // 给灯箱遮罩添加关闭（点击背景关闭）
+                if (lightbox) {
+                    lightbox.addEventListener('click', function(e) {
+                        // 如果点击的是lightbox自身背景（不是图片也不是关闭按钮）则关闭
+                        if (e.target === lightbox) {
+                            closeLightbox();
+                        }
+                    });
+                }
+                
+                // 关闭按钮事件
+                if (closeBtn) {
+                    // 移除旧监听再用新监听
+                    closeBtn.removeEventListener('click', closeLightbox);
+                    closeBtn.addEventListener('click', closeLightbox);
+                }
+                
+                // 按 ESC 键关闭灯箱
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && lightbox && lightbox.style.display === 'flex') {
+                        closeLightbox();
+                    }
+                });
+            }
+
+            // 确保导航和页脚占位等异步内容不影响，但图片在DOM加载后即存在，先执行一次。
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initLightbox);
+            } else {
+                initLightbox();
+            }
+            
+            // 额外监听：由于可能存在动态页脚或者后续重新渲染，但对于静态图片已经足够。
+            // 并且处理游戏视频的后台兼容以及页面导航按钮的动态标签更新（不影响灯箱）
+            // 修复之前global script中可能会覆盖 window.onscroll 的问题，保留原有 backToTop 逻辑不冲突。
+            // 如果外面 script.js 有定义window.onscroll，我们安全增强，不覆盖已有的滚动函数但保留灯箱独立性
+            if (typeof window.onscroll === 'function') {
+                const existingScroll = window.onscroll;
+                window.onscroll = function(e) {
+                    if (existingScroll) existingScroll(e);
+                    // 额外可选无操作，以防止错误
+                };
+            } else {
+                // 如果没有backToTop按钮则忽略
+                window.onscroll = function() {
+                    const backBtn = document.getElementById("backToTop");
+                    if (backBtn) {
+                        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                            backBtn.style.display = "block";
+                        } else {
+                            backBtn.style.display = "none";
+                        }
+                    }
+                };
+            }
+            
+            
+            // 图片加载失败时的备用方案提示（确保不会因为图片路径报错而中断功能）
+            const allImgs = document.querySelectorAll('.asset-item img');
+            allImgs.forEach(img => {
+                img.addEventListener('error', function(e) {
+                    // 图片不存在时，可以不处理或者显示占位符，不影响点击事件, 但为了体验可添加淡灰色背景
+                    if (!img.complete || img.naturalWidth === 0) {
+                        img.style.objectFit = 'contain';
+                        img.style.backgroundColor = '#2a2a2a';
+                        img.alt = '图片加载失败，但灯箱依然可用';
+                    }
+                });
+            });
+        })();
+    </script>
+    <!-- 外部脚本（保留原样，避免覆盖修复）。注意外部的script.js可能包含其他功能，但不影响灯箱主要点击 -->
+    <script src="../script.js"></script>
+    <!-- 额外确保一旦外部脚本重新绑定滚动或事件，也不会破坏图片放大；但为防止外部js再次覆盖灯箱绑定，采用稳妥策略 -->
+</body>
+</html>

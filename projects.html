@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects | BRNA_Dlab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <button id="backToTop" title="Go to top">TOP ⇡</button>
+
+    <nav class="navbar" id="navbar-placeholder"></nav>
+
+        <script>
+    // 在页面加载前立刻执行，防止闪白
+    (function() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+</script>
+
+    <main class="container">
+    <section class="projects-section">
+
+        <div class="section-masthead">
+            <span>Vol. I &nbsp;·&nbsp; Works & Experiments</span>
+            <span>Est. 2026</span>
+        </div>
+        <h2 class="normalPage-title">Projects</h2>
+
+        <div class="project-grid">
+
+            <!-- card1：video -->
+            <a class="project-card" href="Projects page/video.html">
+                <div class="card-thumb">
+                    <img src="assets/images/videocover/cover1.png" alt="Video project">
+                    <span class="card-stamp">Video</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-issue">Type No.001</div>
+                    <div class="card-title">Video</div>
+                    <div class="card-desc" style="text-align:left; font-size:0.7em;">Fragments of feeling in motion.</div>
+                    <div class="card-footer">
+                        <span class="card-tag">Animation · Motion · Video</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- card2：game -->
+            <a class="project-card" href="Projects page/game.html">
+                <div class="card-thumb">
+                    <img src="assets/images/gamecover/charca.png" alt="Video project">
+                    <span class="card-stamp">Game</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-issue">Type No.002</div>
+                    <div class="card-title">Game Design</div>
+                    <div class="card-desc" style="text-align:left; font-size:0.7em;">Characters dancing at my fingertips.</div>
+                    <div class="card-footer">
+                        <span class="card-tag">Game · code</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </div>
+                </a>
+
+             <!-- card3：manga -->
+            <a class="project-card" href="Projects page/manga.html">
+                <div class="card-thumb">
+                    <img src="assets/images/manga/mockup1.png" alt="Video project">
+                    <span class="card-stamp">manga</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-issue">Type No.003</div>
+                    <div class="card-title">Manga</div>
+                    <div class="card-desc" style="text-align:left; font-size:0.7em;">The emotions conveyed by the lines.</div>
+                    <div class="card-footer">
+                        <span class="card-tag">Manga</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </div>
+                </a>
+
+             <!-- card4：Design -->
+            <a class="project-card" href="Projects page/design.html">
+                <div class="card-thumb">
+                    <img src="assets/images/Poster/mockup1.jpg" alt="Video project">
+                    <span class="card-stamp">design</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-issue">Type No.004</div>
+                    <div class="card-title">design</div>
+                    <div class="card-desc" style="text-align:left; font-size:0.7em;">Design makes life more interesting.</div>
+                    <div class="card-footer">
+                        <span class="card-tag">Graphic</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </div>
+                </a>
+
+            <!-- card5：D3d -->
+            <a class="project-card" href="Projects page/3d.html">
+                <div class="card-thumb">
+                    <img src="assets/images/3d/3dcover1.png" alt="Video project">
+                    <span class="card-stamp">3D</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-issue">Type No.005</div>
+                    <div class="card-title">3D</div>
+                    <div class="card-desc" style="text-align:left; font-size:0.7em;">Reflections on Space and Form.</div>
+                    <div class="card-footer">
+                        <span class="card-tag">modeling</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </div>
+                </a>
+
+            <!-- card6：UIUX -->
+            <a class="project-card" href="Projects page/uiux.html">
+                <div class="card-thumb">
+                    <img src="assets/images/UIUX/uicover3.jpg" alt="Video project">
+                    <span class="card-stamp">UI/UX</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-issue">Type No.006</div>
+                    <div class="card-title">UI/UX</div>
+                    <div class="card-desc" style="text-align:left; font-size:0.7em;">Real-time sensory feedback.</div>
+                    <div class="card-footer">
+                        <span class="card-tag">UI design · Web</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </div>
+                </a>
+
+
+            <!--
+                 <a class="project-card" href="Projects page/game.html">
+                <div class="card-thumb no-img"><span>[ image ]</span></div>
+                <div class="card-body">
+                    <div class="card-issue">Project No.002</div>
+                    <div class="card-title">Digital Collage</div>
+                    <div class="card-desc">Layered textures assembled into editorial prints.</div>
+                    <div class="card-footer">
+                        <span class="card-tag">Design · Print</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </div>
+            </a>-->
+
+        </div>
+    </section>
+</main>
+
+<div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
