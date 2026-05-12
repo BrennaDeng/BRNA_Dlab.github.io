@@ -32,8 +32,6 @@ function loadNavbar() {
 if (!overlay) {
     overlay = document.createElement('div');
     overlay.className = 'menu-overlay';
-    // 插到 body 第一个子元素之前，navbar placeholder 之前
-    // 这样 DOM 顺序不会影响 fixed 定位的层叠
     document.body.insertBefore(overlay, document.body.firstChild);
 }
 
@@ -222,7 +220,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const lightboxImg = document.getElementById("lightboxImg");
     const closeBtn = document.querySelector(".close-lightbox");
 
-    // 【关键修复】：只有当灯箱元素确实存在于当前页面时，才绑定事件
     if (lightbox && lightboxImg) {
         const assetImages = document.querySelectorAll('.asset-item img');
         assetImages.forEach(img => {
@@ -243,11 +240,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if(closeBtn) closeBtn.onclick = closeBox;
     }
 
-    // 2. 修复截图中的另一个报错：scrollFunction
-    // 报错是因为 script.js 试图操作一个不存在的“回到顶部”按钮
     const backBtn = document.getElementById("backToTop");
     window.onscroll = function() {
-        if (backBtn) { // 必须检查按钮是否存在
+        if (backBtn) {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 backBtn.style.display = "block";
             } else {
