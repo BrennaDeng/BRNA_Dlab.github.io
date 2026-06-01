@@ -77,12 +77,21 @@ body {
     font-size: 1.15rem;
     line-height: 1.7;
     transition: background-color 0.3s, color 0.3s;
-    background-image: url('assets/images/background/white-plaster.png');
     overflow-x: hidden;
-
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    position: relative; 
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url('assets/images/background/white-plaster.png');
+    opacity: 0.3; 
+    z-index: -1;
+    pointer-events: none;
 }
 
 .normalPage-title {
@@ -886,11 +895,10 @@ video {
     font-family: var(--font-body);
     font-size: 1rem;
     line-height: 1.8;
-    font-style: italic;
     border-left: 2px solid var(--border-color);
     padding-left: 16px;
     color: var(--text-color);
-    opacity: 0.85;
+    opacity: 1;
 }
 
 .about-rule {
@@ -1641,8 +1649,24 @@ video {
     margin-top: 80px;
     border-top: 3px double var(--border-color);
     background: var(--bg-color);
-    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    position: relative; /* 需要加这个 */
 }
+
+.site-footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    opacity: 0.3; 
+    z-index: 0;
+    pointer-events: none;
+}
+
+.site-footer > * {
+    position: relative;
+    z-index: 1;
+}
+
 
 .footer-ornament {
     text-align: center;
